@@ -23,26 +23,27 @@ import com.my.board.model.Board;
  */
 @Controller
 public class HomeController {
-	
 	@Autowired
 	BoardMapper boardMapper;
-	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@GetMapping({"/board"})
-	@ResponseBody
+	@GetMapping({"/board", "/"})
 	public String home(Model model) {
-		//logger.info("Welcome home!");
-		String now = boardMapper.selectNow();
-		System.out.println(now);
-		/*
+		logger.info("Welcome home!");
+		String result = boardMapper.selectNow();
+		logger.info(result);
+		
 		List<Board> boardList = boardMapper.getBoardList();
-		model.addAttribute("boardList", boardList);
-		return boardList;
+		/*
+		for(int i=0; i<boardList.size(); i++) {
+			logger.info((boardList.get(i).getCreDate()).toString());
+		}
 		*/
-		return "hello";
+		
+		model.addAttribute("boardList", boardList);
+		return "write";
 	}
 }

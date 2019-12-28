@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" 
 		contentType="text/html; charset=UTF-8"
 		pageEncoding="UTF-8"
@@ -35,27 +36,19 @@
 								<td>제목</td>
 								<td>작성자</td>
 								<td>날짜</td>
-								<td>조회수</td>
-								<td>댓글수</td>
+								<td>수정날짜</td>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>1</td>
-								<td>게시판 실습1</td>
-								<td>최용화</td>
-								<td>2019.12.18</td>
-								<td>13</td>
-								<td>1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>게시판 실습2</td>
-								<td>최효민</td>
-								<td>2019.12.18</td>
-								<td>10</td>
-								<td>2</td>
-							</tr>
+							<c:forEach var="board" items="${boardList}">
+								<tr>
+									<td>${board.id}</td>
+									<td>${board.title}</td>
+									<td>${board.email}</td>
+									<td><fmt:formatDate value="${board.cre_date}" pattern="yyyy-MM-dd hh:mm"/></td>
+									<td><fmt:formatDate value="${board.mod_date}" pattern="yyyy-MM-dd hh:mm"/></td>
+								</tr>
+							</c:forEach>
 						</tbody>
 					</table>
 

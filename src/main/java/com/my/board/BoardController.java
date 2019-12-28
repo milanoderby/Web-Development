@@ -6,15 +6,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class BoardController {
-	@GetMapping("/board/write")
+	@GetMapping("write")
 	public String write() {
-		
 		return "write";
 	}
 	
 	@PostMapping("/board/write")
 	public String writePost() {
-		
 		return "board";
 	}
 }

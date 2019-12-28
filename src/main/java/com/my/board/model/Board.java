@@ -1,6 +1,6 @@
 package com.my.board.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Board {
 	private long id;
@@ -8,8 +8,9 @@ public class Board {
 	private String content;
 	private String email;
 	private String password;
-	private Date creDate;
-	private Date modDate;
+	private Date cre_date;
+	private Date mod_date;
+	
 	public long getId() {
 		return id;
 	}
@@ -40,16 +41,16 @@ public class Board {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Date getCreDate() {
-		return creDate;
+	public Date getCre_date() {
+		return cre_date;
 	}
-	public void setCreDate(Date creDate) {
-		this.creDate = creDate;
+	public void setCre_date(Date cre_date) {
+		this.cre_date = cre_date;
 	}
-	public Date getModDate() {
-		return modDate;
+	public Date getMod_date() {
+		return mod_date;
 	}
-	public void setModDate(Date modDate) {
-		this.modDate = modDate;
+	public void setMod_date(Date mod_date) {
+		this.mod_date = mod_date;
 	}
 }
