@@ -41,7 +41,7 @@
 						</thead>
 						<tbody>
 							<c:forEach var="board" items="${boardList}">
-								<tr>
+								<tr id="${board.id}">
 									<td>${board.id}</td>
 									<td>${board.title}</td>
 									<td>${board.email}</td>
@@ -57,7 +57,7 @@
 					<script
 						src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-					<a class="btn btn-info pull-right" onclick="location.href='/board/write'">글쓰기</a>
+					<a class="btn btn-info pull-right" id="write">글쓰기</a>
 				</div>
 				<hr>
 				
@@ -80,6 +80,17 @@
 	<footer>
 		<jsp:include page="footer.jsp"></jsp:include>
 	</footer>
+	<script>
+		$("#write").click(function() {
+			location = "/board/write";
+			return false;
+		});
 
+		$("tbody tr").click(function(){
+			var id = $(this).attr("id");
+			location = "/board/" + id;
+			return false;
+		});
+	</script>
 </body>
 </html>

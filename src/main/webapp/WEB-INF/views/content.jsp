@@ -27,20 +27,22 @@
 			<div class="col-sm-8 text-left">
 				<div class="jumbotron">
 					<div class="container text-center">
-						<form method="post" action="/board/write">
+						<form method="post" action="/board/${board.id}">
 							<div class="form-group">
 								<label for="title">Title:</label> <input type="text"
-									class="form-control" name="title" id="title">
+									class="form-control" name="title"
+									id="title" value="${board.title}">
 							</div>
 							<div class="form-group">
 								<label for="content">Content:</label>
 								<textarea class="form-control" rows="5" name="content"
-									id="content"> </textarea>
+									id="content"> ${board.content} </textarea>
 							</div>
 							
 							<div class="form-group">
 								<label for="email">Email:</label> <input type="text"
-									class="form-control" name="email" id="email">
+									class="form-control" name="email"
+									id="email" value="${board.email}" readonly="readonly" disabled>
 							</div>
 							
 							<div class="form-group">
@@ -48,7 +50,7 @@
 									class="form-control" name="password" id="password">
 							</div>
 							<button type="button" id="complete"
-								class="btn btn-primary btn-block" id="complete">글쓰기</button>
+								class="btn btn-primary btn-block" id="complete">글 수정하기</button>
 						</form>
 					</div>
 				</div>

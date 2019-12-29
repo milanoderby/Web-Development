@@ -30,7 +30,7 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@GetMapping({"/board", "/"})
+	@GetMapping({"/"})
 	public String home(Model model) {
 		logger.info("Welcome home!");
 		String result = boardMapper.selectNow();
@@ -44,6 +44,6 @@ public class HomeController {
 		*/
 		
 		model.addAttribute("boardList", boardList);
-		return "write";
+		return "board";
 	}
 }

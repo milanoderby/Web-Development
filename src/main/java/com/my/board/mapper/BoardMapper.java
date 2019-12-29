@@ -9,5 +9,9 @@ import com.my.board.model.Board;
 @Mapper
 public interface BoardMapper {
 	public List<Board> getBoardList();
-	String selectNow();
+	public Board getBoardById(long id);
+	public String getPasswordById(long id);
+	public String selectNow();
+	public int insertBoard(Board board);
+	public int updateBoardById(Board board);
 }
