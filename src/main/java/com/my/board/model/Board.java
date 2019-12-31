@@ -1,14 +1,30 @@
 package com.my.board.model;
 
-import java.util.Date;
+import java.sql.Date;
+import java.time.LocalDateTime;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+
 
 public class Board {
 	private long id;
+	
+	@NotNull
 	private String title;
+	
+	@NotNull
 	private String content;
+	
+	@NotNull
+	@Email
 	private String email;
+	
+	@NotNull
 	private String password;
+	
 	private Date cre_date;
+	
 	private Date mod_date;
 	
 	public long getId() {

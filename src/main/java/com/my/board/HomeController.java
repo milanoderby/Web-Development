@@ -37,11 +37,6 @@ public class HomeController {
 		logger.info(result);
 		
 		List<Board> boardList = boardMapper.getBoardList();
-		/*
-		for(int i=0; i<boardList.size(); i++) {
-			logger.info((boardList.get(i).getCreDate()).toString());
-		}
-		*/
 		
 		model.addAttribute("boardList", boardList);
 		return "board";
