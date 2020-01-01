@@ -1,8 +1,5 @@
 package com.my.board.model;
 
-import java.sql.Date;
-import java.time.LocalDateTime;
-
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
@@ -23,9 +20,9 @@ public class Board {
 	@NotNull
 	private String password;
 	
-	private Date cre_date;
+	private String cre_date;
 	
-	private Date mod_date;
+	private String mod_date;
 	
 	public long getId() {
 		return id;
@@ -57,16 +54,16 @@ public class Board {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Date getCre_date() {
+	public String getCre_date() {
 		return cre_date;
 	}
-	public void setCre_date(Date cre_date) {
+	public void setCre_date(String cre_date) {
 		this.cre_date = cre_date;
 	}
-	public Date getMod_date() {
+	public String getMod_date() {
 		return mod_date;
 	}
-	public void setMod_date(Date mod_date) {
+	public void setMod_date(String mod_date) {
 		this.mod_date = mod_date;
 	}
 }

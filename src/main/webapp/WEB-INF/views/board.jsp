@@ -36,7 +36,7 @@
 								<td>제목</td>
 								<td>작성자</td>
 								<td>게시날짜</td>
-								<!-- <td>수정날짜</td> -->
+								<td>수정날짜</td> 
 								
 							</tr>
 						</thead>
@@ -46,10 +46,8 @@
 									<td>${board.id}</td>
 									<td>${board.title}</td>
 									<td>${board.email}</td>
-									
-									<td><fmt:formatDate value="${board.cre_date}" pattern="yyyy-MM-dd hh:mm"/></td>
-									<!-- <td><fmt:formatDate value="${board.mod_date}" pattern="yyyy-MM-dd hh:mm"/></td> -->
-									 
+									<td>${board.cre_date}</td>
+									 <td>${board.mod_date}</td>
 								</tr>
 							</c:forEach>
 						</tbody>
